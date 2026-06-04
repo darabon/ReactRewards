@@ -1,0 +1,80 @@
+.Join {
+  font-family: "Inter", sans-serif;
+}
+
+.join-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.join-text {
+  margin-left: 150px;
+}
+
+.join-text h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1A2E;
+}
+
+.join-text p {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.join-illustration img {
+  max-height: 732px;
+}
+
+.join-illustration {
+  display: flex;
+  justify-content: end;
+}
+
+.join-benefits {
+  display: grid;
+  margin-left: 17vi;
+  margin-right: 10vi;
+}
+
+.join-benefits h4 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1A1A2E;
+  margin-bottom: 32px;
+}
+
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.benefit-item {
+  min-width: 330px;
+  display: flex;
+  align-items: center;
+   box-shadow: 10px 20px 8px rgba(0,0,0,0.1);
+  gap: 12px;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-item img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.benefit-item p {
+  font-size: 20px;
+  color: #333333;
+  margin: 0;
+  font-weight: 500;
+}

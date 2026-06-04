@@ -1,0 +1,71 @@
+.Leader-Board {
+    max-width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-image: url('/bg-leader-board.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.Colums {
+    display: grid;
+    padding: 0 10.8vw;
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+}
+
+.Left-Colum,
+.Right-Colum {
+    height: 840px;
+    max-width: 840px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0) 100%);
+    border-radius: 12px;
+    padding: 32px 29px;
+    display: grid;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.Left-Colum h2,
+.Right-Colum h2 {
+    font-size: 34px;
+    line-height: 1;
+    margin: 0;
+}
+
+.Review-Container,
+.Referal-Container {
+    backdrop-filter: blur(34px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.Weekly-Right,
+.Weekly-Left {
+    background-color: rgb(255 255 255 / 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    display: grid;
+}
+
+.Weekly-Left {
+    grid-template-columns: 1fr 2fr;
+}
+
+.Achivments {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Person-Avatar {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    line-height: 0;
+}

@@ -1,0 +1,48 @@
+.How_Join {
+    font-family: "Inter", sans-serif;
+margin-top: 90px;
+    margin-left: 200px;
+    padding-bottom: 60px;
+}
+
+.How_title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.How_list {
+    list-style: none;
+    padding: 0;
+margin-top: 30px;
+    
+    list-style-image: url(/public/spisok.svg);
+}
+
+.How_list li {
+    font-size: 16px;
+    color: #666666;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.How_bt {
+    display: inline-block;
+    background-color: #003FE0;
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 14px 80px;
+    border-radius: 25px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: none;
+    margin-top: 20px;
+}
+
+.How_bt:hover {
+    background-color: #0033b3;
+}

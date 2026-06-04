@@ -1,0 +1,78 @@
+.Footer{
+    height: 360px;
+    width: 100%;
+    background-color: #0C0439;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+}
+
+.Footer_content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.Logo{
+        font-family: "Saira", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    color: #D6C2FF;
+    letter-spacing: 0.5px;
+}
+
+.Footer_links{
+    display: flex;
+    color: #D3CCF6;
+    gap: 80px;
+}
+
+.Footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    color: #D3CCF6;
+        margin-left: 200px;
+    margin-right: 200px;
+}
+
+.Footer_legal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Footer_subtitle{
+      font-size: 18px;
+    color: #D3CCF6;
+    font-weight: 500px;
+}
+
+.Search_foot{
+    border: 2px solid #7E76A8;
+        border-radius: 8px;
+    padding: 12px 40px;
+    width: 320px;
+    margin-top: 8px;
+        display: flex
+}
+
+.input_foot{
+    background: transparent;
+        font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    border: none;
+}
+
+.search_foot_icon{
+    background-color: #003FE0;
+    width: 24px;
+    height: 24px;
+    border-radius: 30px;
+    padding: 10px 10px;
+}

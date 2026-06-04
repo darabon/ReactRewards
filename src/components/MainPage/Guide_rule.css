@@ -1,0 +1,51 @@
+.Guide_rule{
+    font-family: 'Inter';
+    margin-bottom: 30px;
+}
+
+.Rule_Flex{
+    display: flex;
+    justify-content: center;
+}
+
+.Rule_list{
+    list-style-image: url(/public/spisok.svg);
+    font-size: 20px;
+    color: #666666;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 500px;
+}
+
+.Rule_list li{
+    
+    margin-bottom: 30px;
+}
+
+.Rule_right p{
+   font-size: 20px; 
+   font-weight: bold;
+   margin-bottom: 40px;
+}
+
+.Rule_bt{
+max-width: 300px;
+    background-color: #ffffff;
+    color:#003FE0;
+    font-weight: 500;
+    font-size: 16px;
+    padding-top:13px;
+    padding-bottom: 13px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: 1px solid #003FE0;
+    margin-top: 20px;
+}
+
+.Main_Rule{
+    text-align: center;
+    font-size:42px ;
+    font-weight: 700;
+}

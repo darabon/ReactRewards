@@ -1,0 +1,10 @@
+body {
+  background-color: #F8FAFB;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

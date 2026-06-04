@@ -1,0 +1,88 @@
+.Rewards {
+    font-family: "Inter", sans-serif;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Reward_title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 50px;
+}
+
+.rewards {
+    display: flex;
+    gap: 30px;
+    align-items: flex-end; 
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.reward_item {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    text-align: center;
+    position: relative;
+}
+
+.reward_score {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+    display: flex;
+    padding-left: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+
+.star {
+    width: auto;
+    padding-right: 10px;
+    justify-content: end;
+    height: auto;
+    padding-top:3px;
+}
+
+.approve_score {
+    font-size: 14px;
+    color: #888888;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: start;
+    padding-left: 20px;
+}
+
+
+.reward_item_txt {
+    background: #E7F0FF;
+    background: linear-gradient(180deg,rgba(231, 240, 255, 1) 4%, rgba(245, 240, 255, 1) 57%, rgba(255, 255, 255, 1) 100%);
+    border-radius: 12px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 20px;
+    min-height: 100px; 
+}
+
+.reward_item_txt p {
+    margin-bottom: 10px;
+}
+
+.reward_item_txt_last {
+    margin-bottom: 60px;
+    background: #E7F0FF;
+    background: linear-gradient(180deg,rgba(231, 240, 255, 1) 4%, rgba(245, 240, 255, 1) 57%, rgba(255, 255, 255, 1) 100%);
+    border-radius: 12px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 20px;
+    min-height: 100px;
+}

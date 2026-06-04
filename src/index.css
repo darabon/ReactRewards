@@ -1,10 +1,9 @@
 body {
-  background-color: #F8FAFB;
-  margin: 0;
-  padding: 0;
+    background-color: #f8fafb;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-

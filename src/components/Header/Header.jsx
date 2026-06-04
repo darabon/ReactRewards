@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import './Header.css'
+import './Header.css';
 
 function Header() {
-
-
     // dont work
     const [isVisible, setIsVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +28,7 @@ function Header() {
 
             setLastScrollY(currentScrollY);
         }
-    }
+    };
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -38,24 +36,26 @@ function Header() {
 
             return () => {
                 window.removeEventListener('scroll', controlNavbar);
-            }
+            };
         }
     }, [lastScrollY]);
 
-  return (
-  <header className={`Header 
+    return (
+        <header
+            className={`Header
   ${isVisible ? 'header--visible' : 'header--hidden'}
-  ${isScrolled ? 'header--scrolled' : 'header--transparent'}`}>
-    <h1 className='Logoone'>Rewards & Review</h1>
-    <ul className='List'>
-        <li className='ElementSp'>Rewards</li>
-        <li>Join Us</li>
-        <li>LeaderBoard</li>
-        <li>Rules</li>
-        <a href="http://">Login</a>
-    </ul>
-  </header>
-  )
+  ${isScrolled ? 'header--scrolled' : 'header--transparent'}`}
+        >
+            <h1 className="Logoone">Rewards & Review</h1>
+            <ul className="List">
+                <li className="ElementSp">Rewards</li>
+                <li>Join Us</li>
+                <li>LeaderBoard</li>
+                <li>Rules</li>
+                <a href="http://">Login</a>
+            </ul>
+        </header>
+    );
 }
 
-export default Header
+export default Header;

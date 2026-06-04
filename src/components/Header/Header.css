@@ -1,6 +1,5 @@
-
 .Header {
-    --header-color-text: #EAD7FF;
+    --header-color-text: #ead7ff;
     color: var(--header-color-text);
     padding-top: 20px;
     position: fixed;
@@ -11,7 +10,11 @@
     justify-content: space-around;
     padding-bottom: 20px;
     border-bottom: 0px;
-    transition: transform 0.5s ease, opacity 0.3s ease, color 0.3s, border-bottom 0.3s ease;
+    transition:
+        transform 0.5s ease,
+        opacity 0.3s ease,
+        color 0.3s,
+        border-bottom 0.3s ease;
 }
 
 .header--hidden {
@@ -32,11 +35,10 @@
 .header--transparent {
     color: var(--header-color-text);
     backdrop-filter: blur(0px);
-
 }
 
 .Logoone {
-    font-family: "Saira", sans-serif;
+    font-family: 'Saira', sans-serif;
     font-size: 30px;
     font-weight: 700;
     margin: 0;
@@ -44,7 +46,7 @@
 }
 
 .List {
-    font-family: "Inter", bold;
+    font-family: 'Inter', bold;
     display: flex;
     align-items: center;
     font-weight: 700;
@@ -62,25 +64,20 @@
 
 .List a {
     color: var(--header-color-text);
-    font-family: "Inter", bold;
+    font-family: 'Inter', bold;
     text-decoration: none;
     background-color: rgba(26, 110, 236, 0.25);
     border-radius: 4px;
     border: 1px solid white;
     padding: 8px 55px;
-    transition:  0.5s ease;
-
+    transition: 0.5s ease;
 }
 
 .List li:hover {
     scale: 1.1;
 }
 
-
 .List a:hover {
     scale: 1.1;
     background-color: rgba(79, 146, 247, 0.699);
-} 
-
-
-
+}

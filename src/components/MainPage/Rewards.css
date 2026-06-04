@@ -1,5 +1,5 @@
 .Rewards {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -15,9 +15,9 @@
 .rewards {
     display: flex;
     gap: 30px;
-    align-items: flex-end; 
+    align-items: flex-end;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .reward_item {
@@ -39,13 +39,12 @@
     justify-content: start;
 }
 
-
 .star {
     width: auto;
     padding-right: 10px;
     justify-content: end;
     height: auto;
-    padding-top:3px;
+    padding-top: 3px;
 }
 
 .approve_score {
@@ -57,17 +56,21 @@
     padding-left: 20px;
 }
 
-
 .reward_item_txt {
-    background: #E7F0FF;
-    background: linear-gradient(180deg,rgba(231, 240, 255, 1) 4%, rgba(245, 240, 255, 1) 57%, rgba(255, 255, 255, 1) 100%);
+    background: #e7f0ff;
+    background: linear-gradient(
+        180deg,
+        rgba(231, 240, 255, 1) 4%,
+        rgba(245, 240, 255, 1) 57%,
+        rgba(255, 255, 255, 1) 100%
+    );
     border-radius: 12px;
     color: #555555;
     font-size: 16px;
     line-height: 1.5;
     text-align: left;
     padding: 20px;
-    min-height: 100px; 
+    min-height: 100px;
 }
 
 .reward_item_txt p {
@@ -76,8 +79,13 @@
 
 .reward_item_txt_last {
     margin-bottom: 60px;
-    background: #E7F0FF;
-    background: linear-gradient(180deg,rgba(231, 240, 255, 1) 4%, rgba(245, 240, 255, 1) 57%, rgba(255, 255, 255, 1) 100%);
+    background: #e7f0ff;
+    background: linear-gradient(
+        180deg,
+        rgba(231, 240, 255, 1) 4%,
+        rgba(245, 240, 255, 1) 57%,
+        rgba(255, 255, 255, 1) 100%
+    );
     border-radius: 12px;
     color: #555555;
     font-size: 16px;

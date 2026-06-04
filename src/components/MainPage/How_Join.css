@@ -1,6 +1,6 @@
 .How_Join {
-    font-family: "Inter", sans-serif;
-margin-top: 90px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 90px;
     margin-left: 200px;
     padding-bottom: 60px;
 }
@@ -15,8 +15,8 @@ margin-top: 90px;
 .How_list {
     list-style: none;
     padding: 0;
-margin-top: 30px;
-    
+    margin-top: 30px;
+
     list-style-image: url(/public/spisok.svg);
 }
 
@@ -31,7 +31,7 @@ margin-top: 30px;
 
 .How_bt {
     display: inline-block;
-    background-color: #003FE0;
+    background-color: #003fe0;
     color: white;
     font-weight: 300;
     font-size: 16px;

@@ -9,7 +9,6 @@
     background-size: cover;
 }
 
-
 .Colums {
     display: grid;
     padding: 0 10.8vw;
@@ -22,12 +21,16 @@
     height: 840px;
     max-width: 840px;
     overflow-y: auto;
-    background: linear-gradient(180deg, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0) 100%);
+    background: linear-gradient(
+        180deg,
+        rgb(0 0 0 / 0.2) 0%,
+        rgb(0 0 0 / 0) 100%
+    );
     border-radius: 12px;
     padding: 32px 29px;
     display: grid;
     color: white;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .Left-Colum h2,

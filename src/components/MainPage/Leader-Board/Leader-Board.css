@@ -1,6 +1,7 @@
 .Leader-Board {
     font-family: 'Inter', sans-serif;
     padding-top: 60px;
+    padding-bottom: 65px;
     color: white;
     max-width: 100%;
     width: 100%;
@@ -52,8 +53,9 @@
 .Left-Colum h2,
 .Right-Colum h2 {
     font-size: 34px;
-    line-height: 1;
-    margin: 0;
+    line-height: 36px;
+    margin-bottom: 32px;
+    margin-top: 0;
     height: max-content;
 }
 
@@ -84,6 +86,10 @@
     grid-template-columns: 1fr 2fr;
 }
 
+.Weekly-Right {
+    padding-top: 20px;
+}
+
 .Achivments {
     display: flex;
     flex-wrap: wrap;
@@ -91,6 +97,9 @@
 
 .Person {
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 .Person-Avatar {
@@ -119,10 +128,10 @@
     margin-bottom: -5px;
 }
 
-.Avarat_img {
+.Avatar_img {
     width: 64px;
     border-radius: 99px;
-    border: 2px solid black;
+    margin-bottom: 8px;
 }
 
 .Achivments {
@@ -130,6 +139,7 @@
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
+    max-width: 150px;
 }
 
 .Icon-Center {

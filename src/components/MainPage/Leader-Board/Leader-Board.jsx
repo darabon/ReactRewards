@@ -1,5 +1,10 @@
+import { useState } from 'react';
 import './Leader-Board.css';
-import { reviewData, referalsData } from '../../../../data/RRData.js';
+import {
+    reviewData,
+    referalsData,
+    AmbassadorData,
+} from '../../../../data/Data.js';
 
 const ReviewCard = ({ review }) => {
     return (
@@ -105,10 +110,11 @@ const ReferalCard = ({ referal }) => {
 };
 
 function LeaderBoard() {
+    const [activeTab, setActiveTab] = useState('monthly');
+
     return (
         <div className="Leader-Board">
             <h1>Weekly Top Leaderboard</h1>
-
             <div className="Colums">
                 <div className="Left-Colum">
                     <h2>Top R</h2>
@@ -126,6 +132,67 @@ function LeaderBoard() {
                             <ReferalCard key={referal.id} referal={referal} />
                         ))}
                     </div>
+                </div>
+            </div>
+
+            {/* Global Leader Board */}
+
+            <div className="Global-Raiting">
+                <h2>Top 10 Campus Ambassador Performers</h2>
+                {/* Buttons */}
+                <div className="Global-Rank">
+                    <div className="Switch-Btns">
+                        <button
+                            className={`Switch-btn ${activeTab === 'monthly' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('monthly')}
+                        >
+                            Monthly
+                        </button>
+                        <button
+                            className={`Switch-btn ${activeTab === 'quarterly' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('quarterly')}
+                        >
+                            Quarterly
+                        </button>
+                    </div>
+                </div>
+                <div className="Leader-Board-Content">
+                    {AmbassadorData.map(user => (
+                        <div key={user.id} className="Leader-Board-Item">
+                            <img src={user.rank} alt="" />
+                            <div className="Person-Leader">
+                                {user.avatar ? (
+                                    <img
+                                        src={user.avatar}
+                                        alt=""
+                                        className="Avatar_img"
+                                    />
+                                ) : null}
+                                <p className="Leader-Name">{user.name}</p>
+                                <p className="Leader-Location">
+                                    {user.location}
+                                </p>
+                            </div>
+                            <div className="Leader-Achievements">
+                                <p>Achievement</p>
+                                {user.achivments &&
+                                    user.achivments.map((achivment, index) => (
+                                        <img
+                                            key={index}
+                                            src={achivment}
+                                            alt=""
+                                        />
+                                    ))}
+                            </div>
+                            <div className="Leader-Rewards">
+                                <div className="Leader-Cup">
+                                    <img src={user.rew_icon} alt="" />
+                                </div>
+                                <p>{user.rewards}</p>
+                                <p>Rewards</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

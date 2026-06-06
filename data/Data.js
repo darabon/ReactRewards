@@ -73,7 +73,7 @@ export const referalsData = [
         name: name,
         rank: rank_2,
         location: 'Jaipur, Rajsthan',
-        avatar: '/Avatar_2.png',
+        avatar: '/Avatar_3.png',
         ref_icon: achivment_referal,
         referals: 345,
         rew_icon: achivment_rewards,

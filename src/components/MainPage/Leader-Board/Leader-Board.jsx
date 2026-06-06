@@ -138,8 +138,12 @@ function LeaderBoard() {
             {/* Global Leader Board */}
 
             <div className="Global-Raiting">
-                <h2>Top 10 Campus Ambassador Performers</h2>
+                <h2 className="Performers">
+                    Top 10 Campus Ambassador Performers
+                </h2>
+
                 {/* Buttons */}
+
                 <div className="Global-Rank">
                     <div className="Switch-Btns">
                         <button

@@ -255,3 +255,65 @@
     font-size: 14px;
     margin: 0;
 }
+
+.Global-Raiting {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.Performers {
+    font-size: 42px;
+    line-height: 60px;
+    letter-spacing: -1.5px;
+    font-weight: 600;
+}
+
+.Global-Rank {
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 50px;
+    justify-content: center;
+    padding: 5px;
+    background-color: rgb(0 0 0 / 0.17);
+    border-radius: 99px;
+}
+
+.Switch-btn {
+    all: unset;
+    position: relative;
+    flex: 1;
+    z-index: 2;
+    background: none;
+    padding: 5px 25px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: color 0.3s;
+}
+
+.Switch-btn.active {
+    color: #003fe0;
+}
+
+.Switch-Btns::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(50% - 4px);
+    height: 100%;
+    background-color: rgb(255 255 255);
+    border-radius: 99px;
+    z-index: 1;
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Switch-btn.active::before {
+    opacity: 1;
+}
+
+.Switch-Btns[data-active-tab='quarterly']::before {
+    transform: translateX(100%);
+}

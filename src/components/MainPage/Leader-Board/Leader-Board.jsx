@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './Leader-Board.css';
 import {
     reviewData,
     referalsData,
     AmbassadorData,
 } from '../../../../data/Data.js';
+import { use } from 'react';
+import { useEffect } from 'react';
 
 const ReviewCard = ({ review }) => {
     return (
@@ -112,6 +114,22 @@ const ReferalCard = ({ referal }) => {
 function LeaderBoard() {
     const [activeTab, setActiveTab] = useState('monthly');
 
+    const monthlyRef = useRef(null);
+    const quarterlyRef = useRef(null);
+    const bgRef = useRef(null);
+
+    useEffect(() => {
+        const activeTarget =
+            activeTab === 'monthly' ? monthlyRef.current : quarterlyRef.current;
+
+        if (activeTarget && bgRef.current) {
+            const { offsetWidth, offsetLeft } = activeTarget;
+
+            bgRef.current.style.width = `${offsetWidth}px`;
+            bgRef.current.style.transform = `translateX(${offsetLeft}px)`;
+        }
+    }, [activeTab]);
+
     return (
         <div className="Leader-Board">
             <h1>Weekly Top Leaderboard</h1>
@@ -146,13 +164,16 @@ function LeaderBoard() {
 
                 <div className="Global-Rank">
                     <div className="Switch-Btns">
+                        <div ref={bgRef} className="Active-bg-js"></div>
                         <button
+                            ref={monthlyRef}
                             className={`Switch-btn ${activeTab === 'monthly' ? 'active' : ''}`}
                             onClick={() => setActiveTab('monthly')}
                         >
                             Monthly
                         </button>
                         <button
+                            ref={quarterlyRef}
                             className={`Switch-btn ${activeTab === 'quarterly' ? 'active' : ''}`}
                             onClick={() => setActiveTab('quarterly')}
                         >

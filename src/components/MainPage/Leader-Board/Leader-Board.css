@@ -1,4 +1,7 @@
 .Leader-Board {
+    font-family: 'Inter', sans-serif;
+    padding-top: 60px;
+    color: white;
     max-width: 100%;
     width: 100%;
     display: grid;
@@ -7,6 +10,12 @@
     background-image: url('/bg-leader-board.png');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.Leader-Board h1 {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 60px;
 }
 
 .Colums {
@@ -18,7 +27,7 @@
 
 .Left-Colum,
 .Right-Colum {
-    height: 840px;
+    max-height: 840px;
     max-width: 840px;
     overflow-y: auto;
     background: linear-gradient(
@@ -29,8 +38,15 @@
     border-radius: 12px;
     padding: 32px 29px;
     display: grid;
-    color: white;
-    font-family: 'Inter', sans-serif;
+    height: max-content;
+    /* Скрытие скроллбара для firefix */
+    scrollbar-width: none;
+}
+/* для chromium */
+.Left-Colum::-webkit-scrollbar,
+.Right-Colum::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
 }
 
 .Left-Colum h2,
@@ -38,10 +54,17 @@
     font-size: 34px;
     line-height: 1;
     margin: 0;
+    height: max-content;
 }
 
-.Review-Container,
 .Referal-Container {
+    backdrop-filter: blur(34px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.Review-Container {
     backdrop-filter: blur(34px);
     display: grid;
     grid-template-columns: 1fr;
@@ -54,6 +77,7 @@
     border-radius: 12px;
     padding: 8px;
     display: grid;
+    height: max-content;
 }
 
 .Weekly-Left {
@@ -65,10 +89,159 @@
     flex-wrap: wrap;
 }
 
+.Person {
+    box-sizing: border-box;
+}
+
 .Person-Avatar {
     display: grid;
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr;
     line-height: 0;
+}
+
+.Person-Name {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.Location {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 4px;
+    color: #d0d5ee;
+}
+
+.Rank_img {
+    max-width: 32px;
+    margin-bottom: -5px;
+}
+
+.Avarat_img {
+    width: 64px;
+    border-radius: 99px;
+    border: 2px solid black;
+}
+
+.Achivments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.Icon-Center {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(255 241 204 / 0.2);
+    border-radius: 99px;
+}
+
+.Icon {
+    width: 32px;
+    height: 32px;
+}
+
+.Person-Title {
+    display: grid;
+    gap: 16px;
+    height: max-content;
+    margin-left: 3vw;
+}
+
+.Person-Rairing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgb(0 0 0 / 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    width: 80%;
+}
+
+.Person-Rairing h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    color: rgb(255 255 255);
+    margin: 0;
+}
+
+.Person-Rairing p {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255 255 255 / 0.7);
+    margin: 0;
+}
+
+.Star {
+    width: 20px;
+}
+
+.Person-Text {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255 255 255 / 0.7);
+}
+
+.Person-Colledg {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255 255 255 / 0.7);
+    width: 80%;
+}
+
+.Big-Achivment {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding-bottom: 22px;
+}
+
+.Ref-Rel-Con {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgb(0 0 0 / 0.17);
+    border-radius: 99px;
+    padding-left: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: max-content;
+}
+
+.Ref-Icon {
+    width: 30px;
+    height: 30px;
+}
+
+.Ref-Icon-Con {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(255 241 204 / 0.2);
+    border-radius: 99px;
+}
+
+.Quantity {
+    font-size: 20px;
+    line-height: 20px;
+    color: rgb(255 255 255);
+    margin: 0;
+}
+
+.Name-Quantity {
+    font-size: 14px;
+    margin: 0;
 }

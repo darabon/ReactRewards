@@ -6,8 +6,16 @@ const ReviewCard = ({ review }) => {
         <div className="Weekly-Left">
             <div className="Person">
                 <div className="Person-Avatar">
-                    {review.rank ? <img src={review.rank} alt="" /> : null}
-                    {review.avatar ? <img src={review.avatar} alt="" /> : null}
+                    {review.rank ? (
+                        <img src={review.rank} alt="" className="Rank_img" />
+                    ) : null}
+                    {review.avatar ? (
+                        <img
+                            src={review.avatar}
+                            alt=""
+                            className="Avatar_img"
+                        />
+                    ) : null}
                     <p className="Person-Name">{review.name}</p>
                     <p className="Location">{review.location}</p>
                 </div>
@@ -16,22 +24,28 @@ const ReviewCard = ({ review }) => {
                     {review.achivments &&
                         review.achivments.map((icon, index) =>
                             icon ? (
-                                <img
-                                    key={index}
-                                    src={icon}
-                                    alt="achievement"
-                                    className="icon"
-                                />
+                                <div className="Icon-Center">
+                                    <img
+                                        key={index}
+                                        src={icon}
+                                        alt="Achivment"
+                                        className="Icon"
+                                    />
+                                </div>
                             ) : null,
                         )}
                 </div>
             </div>
             <div className="Person-Title">
-                <div className="Person-Rairing">{review.raiting}</div>
+                <div className="Person-Rairing">
+                    <img src="/Star.png" alt="" className="Star" />
+                    <h3>{review.raiting}</h3>
+                    <p>Approved Reviews</p>
+                </div>
 
                 <div className="Person-Text">{review.text}</div>
 
-                <div className="Person-Location">{review.location}</div>
+                <div className="Person-Colledg">{review.college}</div>
             </div>
         </div>
     );
@@ -42,30 +56,44 @@ const ReferalCard = ({ referal }) => {
         <div className="Weekly-Right">
             <div className="Person-Card">
                 <div className="Person-Avatar">
-                    {referal.rank ? <img src={referal.rank} alt="" /> : null}
+                    {referal.rank ? (
+                        <img src={referal.rank} alt="" className="Rank_img" />
+                    ) : null}
                     {referal.avatar ? (
-                        <img src={referal.avatar} alt="" />
+                        <img
+                            src={referal.avatar}
+                            alt=""
+                            className="Avatar_img"
+                        />
                     ) : null}
                     <p className="Person-Name">{referal.name}</p>
                     <p className="Location">{referal.location}</p>
                 </div>
 
                 <div className="Big-Achivment">
-                    <div>
+                    <div className="Ref-Rel-Con">
                         {referal.ref_icon ? (
-                            <img src={referal.ref_icon} alt="" />
+                            <div className="Ref-Icon-Con">
+                                <img
+                                    src={referal.ref_icon}
+                                    alt=""
+                                    className="Ref-Icon"
+                                />
+                            </div>
                         ) : null}
                         <h3 className="Quantity">{referal.referals}</h3>
                         <p className="Name-Quantity">Referasl</p>
                     </div>
 
-                    <div>
+                    <div className="Ref-Rel-Con">
                         {referal.rew_icon ? (
-                            <img
-                                src={referal.rew_icon}
-                                alt=""
-                                className="icon"
-                            />
+                            <div className="Ref-Icon-Con">
+                                <img
+                                    src={referal.rew_icon}
+                                    alt=""
+                                    className="Ref-Icon"
+                                />
+                            </div>
                         ) : null}
                         <h3 className="Quantity">{referal.rewards}</h3>
                         <p className="Name-Quantity">Rewards</p>

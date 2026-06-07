@@ -3,7 +3,8 @@ import './Leader-Board.css';
 import {
     reviewData,
     referalsData,
-    AmbassadorData,
+    quarterlyData,
+    monthlyData,
 } from '../../../../data/Data.js';
 import { use } from 'react';
 import { useEffect } from 'react';
@@ -112,7 +113,9 @@ const ReferalCard = ({ referal }) => {
 };
 
 function LeaderBoard() {
+    // Data switcher
     const [activeTab, setActiveTab] = useState('monthly');
+    const currentData = activeTab === 'monthly' ? monthlyData : quarterlyData;
 
     const monthlyRef = useRef(null);
     const quarterlyRef = useRef(null);
@@ -181,8 +184,11 @@ function LeaderBoard() {
                         </button>
                     </div>
                 </div>
+
+                {/* Raiting */}
+
                 <div className="Leader-Board-Content">
-                    {AmbassadorData.map(user => (
+                    {currentData.map(user => (
                         <div key={user.id} className="Leader-Board-Item">
                             <img src={user.rank} alt="" />
                             <div className="Person-Leader">

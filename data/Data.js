@@ -81,7 +81,7 @@ export const referalsData = [
     },
 ];
 
-export const AmbassadorData = [
+export const monthlyData = [
     {
         id: 1,
         name: name,
@@ -101,6 +101,28 @@ export const AmbassadorData = [
         achivments: [achivment_1, achivment_2, achivment_3, achivment_4],
         rew_icon: achivment_rewards,
         rewards: 202,
+    },
+];
+
+export const quarterlyData = [
+    {
+        id: 1,
+        name: name,
+        rank: rank_1,
+        location: location,
+        avatar: '/Avatar_2.png',
+        achivments: [achivment_1, achivment_2, achivment_3, achivment_4],
         rew_icon: achivment_rewards,
+        rewards: 1488,
+    },
+    {
+        id: 2,
+        name: name,
+        rank: rank_1,
+        location: location,
+        avatar: '/Avatar_2.png',
+        achivments: [achivment_1, achivment_2, achivment_3, achivment_4],
+        rew_icon: achivment_rewards,
+        rewards: 1984,
     },
 ];

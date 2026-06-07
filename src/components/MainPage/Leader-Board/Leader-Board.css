@@ -260,6 +260,7 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    width: 100%;
 }
 
 .Performers {
@@ -267,6 +268,7 @@
     line-height: 60px;
     letter-spacing: -1.5px;
     font-weight: 600;
+    margin: 60px auto;
 }
 
 .Global-Rank {
@@ -318,4 +320,39 @@
     transition:
         transform 0.3s ease-in,
         width 0.3s ease-out;
+}
+
+.Leader-Board-Content {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: 11vw;
+    margin-right: 11vw;
+    gap: 16px;
+}
+
+.Leader-Board-Item {
+    display: flex;
+    height: 88px;
+    width: 100%;
+    background-color: rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-right: 36px;
+    padding-left: 25px;
+    align-items: center;
+}
+
+.Person-Leader {
+    display: flex;
+}
+
+.Leader-Achievements {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Leader-Rewards {
+    display: flex;
 }

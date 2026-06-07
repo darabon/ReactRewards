@@ -199,10 +199,10 @@ function LeaderBoard() {
                                         className="Avatar_img"
                                     />
                                 ) : null}
-                                <p className="Leader-Name">{user.name}</p>
-                                <p className="Leader-Location">
-                                    {user.location}
-                                </p>
+                                <div>
+                                    <p className="Person-Name">{user.name}</p>
+                                    <p className="Location">{user.location}</p>
+                                </div>
                             </div>
                             <div className="Leader-Achievements">
                                 <p>Achievement</p>

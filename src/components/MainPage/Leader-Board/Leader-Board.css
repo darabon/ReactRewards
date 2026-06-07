@@ -114,6 +114,7 @@
     font-size: 16px;
     line-height: 24px;
     margin: 0;
+    font-weight: 600;
 }
 
 .Location {
@@ -347,12 +348,72 @@
     display: flex;
 }
 
+.Rank-Img {
+    height: 24px;
+    margin-right: 44px;
+}
+
+.Person-Leader div {
+    align-content: center;
+}
+
+.Person-Leader div p {
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+.Person-Leader img {
+    margin-bottom: 0;
+    height: 64px;
+    width: auto;
+}
+
 .Leader-Achievements {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(255 255 255 / 0.08);
+    height: 64px;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 14px;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    border-radius: 99px;
+}
+
+.Leader-Achievement {
+    display: grid;
+    background-color: rgb(255 255 255 / 0.2);
+    border-radius: 99px;
+    width: 48px;
+    height: 48px;
+    padding: 9px;
+    justify-content: center;
+    align-content: center;
 }
 
 .Leader-Rewards {
     display: flex;
+    gap: 17px;
+    align-items: center;
+}
+
+.Leader-Cup {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255 241 204 / 0.15);
+    border-radius: 99px;
+}
+
+.Leader-Cup img {
+    height: 36px;
+}
+
+.Leader-Rewards p {
+    margin-bottom: 0;
 }

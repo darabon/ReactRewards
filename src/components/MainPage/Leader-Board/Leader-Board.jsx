@@ -190,7 +190,7 @@ function LeaderBoard() {
                 <div className="Leader-Board-Content">
                     {currentData.map(user => (
                         <div key={user.id} className="Leader-Board-Item">
-                            <img src={user.rank} alt="" />
+                            <img src={user.rank} alt="" className="Rank-Img" />
                             <div className="Person-Leader">
                                 {user.avatar ? (
                                     <img
@@ -208,19 +208,25 @@ function LeaderBoard() {
                                 <p>Achievement</p>
                                 {user.achivments &&
                                     user.achivments.map((achivment, index) => (
-                                        <img
-                                            key={index}
-                                            src={achivment}
-                                            alt=""
-                                        />
+                                        <div className="Leader-Achievement">
+                                            <img
+                                                key={index}
+                                                src={achivment}
+                                                alt=""
+                                            />
+                                        </div>
                                     ))}
                             </div>
                             <div className="Leader-Rewards">
                                 <div className="Leader-Cup">
                                     <img src={user.rew_icon} alt="" />
                                 </div>
-                                <p>{user.rewards}</p>
-                                <p>Rewards</p>
+                                <div>
+                                    <p className="Person-Name">
+                                        ₹{user.rewards}
+                                    </p>
+                                    <p className="Location">Rewards</p>
+                                </div>
                             </div>
                         </div>
                     ))}

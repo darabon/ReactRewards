@@ -9,15 +9,143 @@ import './Rules.css';
 import './Tasks.css';
 import LeaderBoard from './Leader-Board/Leader-Board';
 
+// Данные победителей с разнообразными аватарами для точного соответствия макету
+const winnersData = [
+    {
+        id: 1,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 2,
+        name: 'Rameshwer Anna',
+        time: '1 hr ago',
+        amount: '₹20 Win',
+        type: 'By Referral',
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 3,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 4,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 5,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 6,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 7,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 8,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 9,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+    {
+        id: 10,
+        name: 'Hamdur Ramhan',
+        time: '1 hr ago',
+        amount: '₹200 Win',
+        type: 'By Review',
+        avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80',
+        college: 'Vellore Institute of Technology',
+    },
+];
+
+const WinnerCard = ({ winner }) => (
+    <div className="winner-card">
+        <div className="winner-avatar-container">
+            <img
+                src={winner.avatar}
+                alt={winner.name}
+                className="winner-avatar"
+                onError={e => {
+                    e.target.src =
+                        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80';
+                }}
+            />
+        </div>
+        <div className="winner-info">
+            <div className="winner-name-row">
+                <span className="winner-name">{winner.name}</span>
+                <span className="winner-time">{winner.time}</span>
+            </div>
+            <span className="winner-college">{winner.college}</span>
+        </div>
+        <div className="winner-amount-badge">
+            <span className="winner-amount">{winner.amount}</span>
+            <span className="winner-type">{winner.type}</span>
+        </div>
+    </div>
+);
+
 function MainPage() {
     return (
-        <div className="MainPage">
-            {/*Hero*/}
-
-            <div>
-                <div className="trophy">
-                    <img src="/right-win-trophhy.png" alt="" />
+        <div className="App">
+            {/* Hero Section */}
+            <div className="Hero">
+                {/* Кубок (скрывается на мобильных и планшетах) */}
+                <div className="trophy-wrapper">
+                    <img
+                        src="/right-win-trophhy.png"
+                        alt="Trophy"
+                        className="trophy"
+                        onError={e => (e.target.style.display = 'none')}
+                    />
                 </div>
+
+                {/* Фоновый контейнер */}
                 <div className="bg-container">
                     <img
                         src="/main-bg.svg"
@@ -30,6 +158,8 @@ function MainPage() {
                         className="main-city-bg"
                     />
                 </div>
+
+                {/* Поиск и тексты в шапке */}
                 <div className="main-input">
                     <p className="top-text-input">
                         Share your College Experience
@@ -51,10 +181,51 @@ function MainPage() {
                         decisions.
                     </p>
                 </div>
+
+                {/* БЛОК ПОБЕДИТЕЛЕЙ (Идеальная интеграция по макету) */}
+                <div className="winners-overlay-bottom">
+                    <div className="winners-container-inner">
+                        {/* Ряд 1: Тот самый ряд, на котором Recent Winner жестко закреплен над первой карточкой */}
+                        <div className="winners-row row-1">
+                            <div className="first-card-group">
+                                <div className="recent-winner-badge">
+                                    Recent Winner
+                                </div>
+                                <WinnerCard winner={winnersData[0]} />
+                            </div>
+                        </div>
+
+                        {/* Ряд 2: Второй ряд (со смещением) */}
+                        <div className="winners-row row-2">
+                            {winnersData.slice(1, 4).map(w => (
+                                <WinnerCard key={w.id} winner={w} />
+                            ))}
+                        </div>
+
+                        {/* Ряд 3: Третий ряд (со смещением) */}
+                        <div className="winners-row row-3">
+                            {winnersData.slice(4, 7).map(w => (
+                                <WinnerCard key={w.id} winner={w} />
+                            ))}
+                        </div>
+
+                        {/* Ряд 4: Четвертый ряд */}
+                        <div className="winners-row row-4">
+                            {winnersData.slice(7, 9).map(w => (
+                                <WinnerCard key={w.id} winner={w} />
+                            ))}
+                        </div>
+
+                        <div className="winners-row row-5">
+                            {winnersData.slice(9, 10).map(w => (
+                                <WinnerCard key={w.id} winner={w} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            {/*  Instruction  */}
-
+            {/* Instruction  */}
             <div className="Instructions">
                 <div className="InHeader">
                     <p className="subtitle">How to Win</p>
@@ -112,7 +283,6 @@ function MainPage() {
             </div>
 
             {/* Join   */}
-
             <div className="Join">
                 <div className="join-content">
                     <div className="join-text">
@@ -159,7 +329,7 @@ function MainPage() {
                         </div>
                         <div className="benefit-item">
                             <img src="/payment.svg" alt="PayTM icon" />
-                            <p>Instant PayTM cash payments</p>
+                            <p>Instant Paytm cash payments</p>
                         </div>
                         <div className="benefit-item">
                             <img src="/light.svg" alt="Internship icon" />
@@ -174,7 +344,6 @@ function MainPage() {
             </div>
 
             {/* Tasks   */}
-
             <div className="Join_t">
                 <h3>What will you be up to?</h3>
 
@@ -241,17 +410,13 @@ function MainPage() {
                 </div>
             </div>
 
-            {/*  Rewards  */}
-
+            {/* Rewards  */}
             <div className="Rewards">
-                {/* Исправил h7 на h2, так как h7 не существует в HTML */}
                 <h2 className="Reward_title">Milestones and Rewards</h2>
 
                 <div className="rewards">
-                    {/* Item 1 */}
                     <div className="reward_item">
                         <div className="reward_score">
-                            {/* Если картинка не грузится, используйте заглушку или emoji ★ */}
                             <img src="/star.svg" className="star" alt="star" />
                             <p>5</p>
                         </div>
@@ -261,7 +426,6 @@ function MainPage() {
                         </div>
                     </div>
 
-                    {/* Item 2 */}
                     <div className="reward_item">
                         <div className="reward_score">
                             <img src="/star.svg" className="star" alt="star" />
@@ -274,7 +438,6 @@ function MainPage() {
                         </div>
                     </div>
 
-                    {/* Item 3 */}
                     <div className="reward_item">
                         <div className="reward_score">
                             <img src="/star.svg" className="star" alt="star" />
@@ -288,7 +451,6 @@ function MainPage() {
                         </div>
                     </div>
 
-                    {/* Item 4 */}
                     <div className="reward_item">
                         <div className="reward_score">
                             <img src="/star.svg" className="star" alt="star" />
@@ -302,7 +464,6 @@ function MainPage() {
                         </div>
                     </div>
 
-                    {/* Item 5 */}
                     <div className="reward_item">
                         <div className="reward_score">
                             <img src="/star.svg" className="star" alt="star" />
@@ -322,14 +483,13 @@ function MainPage() {
             </div>
 
             {/* How_Join   */}
-
             <div className="How_Join">
                 <h1 className="How">How to Join</h1>
                 <ul className="How_list">
                     <li>
                         Submit your review for your college using the Review
                         Form. You will get your Referral code after submitting a
-                        review of your college{' '}
+                        review of your college
                     </li>
                     <li>
                         Refer your colleagues to join as a campus ambassador
@@ -340,15 +500,13 @@ function MainPage() {
             </div>
 
             {/* Leader board */}
-
             <LeaderBoard />
 
-            {/*  Guide_rule  */}
-
+            {/* Guide_rule  */}
             <div className="Guide_rule">
                 <h1 className="Main_Rule">Rules and Guidelines</h1>
                 <div className="Rule_Flex">
-                    <img src="/Rule.png" />
+                    <img src="/Rule.png" alt="Rule visual" />
                     <div className="Rule_right">
                         <p>Key Point</p>
                         <ul className="Rule_list">

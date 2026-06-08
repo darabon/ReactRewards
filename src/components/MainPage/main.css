@@ -1,37 +1,79 @@
-.bg-container {
-    z-index: -999;
-    -webkit-mask-image: url('/main-bg.svg');
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    width: 100%;
+/* ==========================================================================
+   Главный блок Hero и его Фоновые элементы
+   ========================================================================== */
+
+.Hero {
     position: relative;
+    width: 100%;
+    min-height: 1050px; /* Удлиненная высота для идеального раскрытия фона */
+    background: #f8fafb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    -webkit-mask-image: url('/main-bg.svg');
+    -webkit-mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center bottom;
 }
 
 .main-svg-bg {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
 .main-city-bg {
+    top: 0;
     position: absolute;
-    top: 0px;
+    bottom: 0;
     left: 0;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* Обертка для кубка */
+.trophy-wrapper {
+    z-index: 999;
+    pointer-events: none;
 }
 
 .trophy {
     position: absolute;
-    z-index: 999;
-    margin-left: 67%; /* 676767676767676767676767676767 */
-    margin-top: 7%;
+    margin-left: 67vw;
+    margin-top: 7vw;
 }
+
+.trophy-wrapper img {
+    height: 36vw;
+}
+
+/* ==========================================================================
+   Строка Поиска и Текстовый Контент (Hero Input)
+   ========================================================================== */
 
 .main-input {
     z-index: 1000;
-    position: absolute;
-    top: 120px;
+    position: relative;
+    margin-top: 120px;
     margin-left: 150px;
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .top-text-input {
@@ -43,39 +85,465 @@
     font-size: 48px;
     font-family: 'Inter', sans-serif;
     font-weight: 900;
-    line-height: 30px;
+    line-height: 55px;
+    margin-bottom: 20px;
 }
 
 .button-text-input {
-    font-size: 24px;
-    font-family: Inter;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.7);
+    margin-top: 16px;
+    line-height: 28px;
 }
 
 .Search_bar {
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    max-width: 744px;
 }
 
 .search_icon {
     position: absolute;
-    left: 20px;
+    left: 24px;
     top: 50%;
     transform: translateY(-50%);
     width: 24px;
     height: 24px;
     pointer-events: none;
+    opacity: 0.6;
+    z-index: 2;
 }
 
 .input {
-    width: 744px;
+    width: 100%;
     height: 72px;
-    border-radius: 8px;
-    color: grey;
+    border-radius: 12px;
+    color: #272937;
+    background: rgba(255, 255, 255);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     font-size: 20px;
-    outline: 16px solid #00000044;
     border: none;
-    padding-left: 60px;
+    outline: 15px solid rgba(0, 0, 0, 0.15);
+    padding-left: 68px;
     box-sizing: border-box;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus {
+    border-color: rgba(219, 174, 255, 0.8);
+    box-shadow: 0 0 15px rgba(219, 174, 255, 0.3);
+}
+
+/* ==========================================================================
+   Блок Победителей (Winners Overlay) — Обновленный Дизайн
+   ========================================================================== */
+
+.winners-overlay-bottom {
+    position: relative;
+    margin-top: 8vw;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.winners-container-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/* Базовые стили для рядов */
+.winners-row {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    align-items: center;
+}
+
+/* Позиционирование по шахматной сетке на десктопе */
+.row-1 {
+    margin-left: 20vw;
+}
+
+.row-2 {
+    margin-left: -1vw;
+}
+
+.row-3 {
+    margin-left: 10vw;
+}
+
+.row-4 {
+    margin-left: 30vw;
+}
+
+.row-5 {
+    margin-left: 70vw;
+}
+
+.first-card-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding-left: 0%;
+}
+
+/* Бейдж Recent Winner */
+.recent-winner-badge {
+    width: 221px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35); /* 20% черной прозрачности */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.winner-card {
+    width: 385px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    background: rgba(255 255 255 0.35); /* 20% черной прозрачности */
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    padding: 0 16px 0 6px; /* 6px слева, чтобы аватар красиво выходил наружу */
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    pointer-events: auto;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.winner-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.winner-avatar-container {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.35);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.winner-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.winner-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 180px;
+    margin-right: auto;
+    margin-left: 16px;
+}
+
+.winner-name-row {
+    display: flex;
+    align-items: baseline;
+}
+
+.winner-name {
+    font-size: 16px;
+    line-height: 24px;
+
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.winner-time {
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+}
+
+.winner-college {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+/* Правый бейдж с выигрышем */
+.winner-amount-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.winner-amount {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.winner-type {
+    font-size: 12px;
+    line-height: 24px;
+
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   АДАПТИВНОСТЬ ДЛЯ ТАБЛЕТОК И СМАРТФОНОВ
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+    .main-input {
+        margin-left: 80px;
+        max-width: 50%;
+    }
+    .top-text-input {
+        font-size: 38px;
+        line-height: 44px;
+    }
+}
+
+/* Планшетная и мобильная верстка */
+@media (max-width: 1024px) {
+    .Hero {
+        min-height: 880px; /* Удлиненный фон */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .bg-container {
+        -webkit-mask-size: cover;
+        background: linear-gradient(135deg, #0f0c20 0%, #15103c 100%);
+    }
+
+    .trophy-wrapper {
+        display: none !important; /* Прячем кубок на мобилках */
+    }
+
+    /* Полное центрирование поискового блока */
+    .main-input {
+        position: relative;
+        top: 0;
+        margin: 80px auto 0 auto;
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Search_bar {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .top-text-input {
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+    }
+
+    .button-text-input {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Поднимаем блок победителей на планшетах */
+    .winners-overlay-bottom {
+        margin-top: -120px; /* Интенсивное поднятие блока наверх */
+        padding-bottom: 40px;
+        z-index: 15;
+    }
+
+    .winners-container-inner {
+        padding-left: 0;
+    }
+
+    /* Превращаем строки в горизонтальные слайдеры с возможностью свайпа */
+    .row-1,
+    .row-2,
+    .row-3,
+    .row-4,
+    .row-5 {
+        margin-left: 0 !important;
+        padding-left: 20px;
+        width: auto;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 16px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        display: flex !important;
+    }
+
+    .first-card-group {
+        align-items: flex-start;
+    }
+
+    .row-1::-webkit-scrollbar,
+    .row-2::-webkit-scrollbar,
+    .row-3::-webkit-scrollbar,
+    .row-4::-webkit-scrollbar,
+    .row-5::-webkit-scrollbar {
+        display: none; /* Скрываем некрасивый нативный скролл */
+    }
+
+    /* Плавная бесконечная анимация скольжения для живого эффекта */
+    .row-2,
+    .row-3,
+    .row-4,
+    .row-5 {
+        animation: mobileMarquee 35s linear infinite;
+    }
+
+    .row-3 {
+        animation-direction: reverse;
+        animation-duration: 40s;
+    }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 550px) {
+    .Hero {
+        min-height: 800px; /* Оптимальное растяжение под экраны телефонов */
+    }
+
+    .main-input {
+        margin-top: 50px;
+        padding: 0 16px;
+    }
+
+    .top-text-input {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+
+    .Search_bar {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .input {
+        display: block !important;
+        height: 54px;
+        font-size: 16px;
+        padding-left: 56px;
+    }
+
+    .search_icon {
+        width: 18px;
+        height: 18px;
+        left: 18px;
+    }
+
+    .button-text-input {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 15px;
+    }
+
+    /* Сбалансированное поднятие блока победителей на смартфонах */
+    .winners-overlay-bottom {
+        margin-top: -90px;
+        padding-bottom: 30px;
+    }
+
+    /* Мобильный размер плиток с сохранением пропорций макета */
+    .winner-card {
+        width: 320px;
+        height: 56px;
+        padding: 0 12px 0 4px;
+    }
+
+    .winner-avatar-container {
+        width: 44px;
+        height: 44px;
+        border-width: 4px;
+    }
+
+    .winner-name {
+        font-size: 12px;
+    }
+
+    .winner-college,
+    .winner-time {
+        font-size: 9px;
+    }
+
+    .winner-amount {
+        font-size: 12px;
+    }
+
+    .winner-type {
+        font-size: 8px;
+    }
+
+    .recent-winner-badge {
+        width: 180px;
+        height: 34px;
+        font-size: 12px;
+    }
+}
+
+/* Анимация движения карточек */
+@keyframes mobileMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-40%);
+    }
 }

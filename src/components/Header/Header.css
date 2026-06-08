@@ -1,20 +1,16 @@
 .Header {
-    --header-color-text: #ead7ff;
+    --header-color-text: #EAD7FF;
     color: var(--header-color-text);
     padding-top: 20px;
     position: fixed;
     display: flex;
     width: 100%;
     z-index: 99999;
-    align-content: center;
-    justify-content: space-around;
-    padding-bottom: 20px;
-    border-bottom: 0px;
-    transition:
-        transform 0.5s ease,
-        opacity 0.3s ease,
-        color 0.3s,
-        border-bottom 0.3s ease;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s, border-bottom 0.3s ease, background 0.3s ease;
+    box-sizing: border-box;
 }
 
 .header--hidden {
@@ -26,10 +22,9 @@
 }
 
 .header--scrolled {
-    background-color: rgb(0 0 0 / 0.15);
-    --header-color-text: #ffffff;
     backdrop-filter: blur(5px);
     border-bottom: 3px solid white;
+    background: rgba(26, 26, 46, 0.4);
 }
 
 .header--transparent {
@@ -38,15 +33,16 @@
 }
 
 .Logoone {
-    font-family: 'Saira', sans-serif;
+    font-family: "Saira", sans-serif;
     font-size: 30px;
     font-weight: 700;
     margin: 0;
     letter-spacing: 0.5px;
+    z-index: 100001;
 }
 
 .List {
-    font-family: 'Inter', bold;
+    font-family: "Inter", sans-serif;
     display: flex;
     align-items: center;
     font-weight: 700;
@@ -60,24 +56,214 @@
     font-size: 16px;
     font-weight: bold;
     transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .List a {
     color: var(--header-color-text);
-    font-family: 'Inter', bold;
+    font-family: "Inter", sans-serif;
     text-decoration: none;
     background-color: rgba(26, 110, 236, 0.25);
     border-radius: 4px;
     border: 1px solid white;
     padding: 8px 55px;
     transition: 0.5s ease;
+    display: inline-block;
 }
 
 .List li:hover {
-    scale: 1.1;
+    transform: scale(1.1);
 }
 
 .List a:hover {
-    scale: 1.1;
+    transform: scale(1.1);
     background-color: rgba(79, 146, 247, 0.699);
+}
+
+/* =========================================
+   BURGER MENU
+   ========================================= */
+.burger {
+    display: none;
+    width: 32px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 100001;
+    flex-shrink: 0;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--header-color-text);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+}
+
+.burger span:nth-child(1) {
+    top: 0px;
+}
+
+.burger span:nth-child(2) {
+    top: 10px;
+}
+
+.burger span:nth-child(3) {
+    top: 20px;
+}
+
+/* Анимация превращения в крестик */
+.burger.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.burger.open span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+}
+
+.burger.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+}
+
+/* =========================================
+   ПЛАНШЕТЫ (до 1024px)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    .Header {
+        padding: 18px 30px;
+    }
+
+    .Logoone {
+        font-size: 26px;
+    }
+
+    .List {
+        gap: 25px;
+    }
+
+    .List li {
+        font-size: 15px;
+    }
+
+    .List a {
+        padding: 8px 30px;
+        font-size: 15px;
+    }
+}
+
+/* =========================================
+   МОБИЛЬНЫЕ УСТРОЙСТВА (до 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .Header {
+        padding: 15px 20px;
+    }
+
+    .Logoone {
+        font-size: 22px;
+    }
+
+    /* Показываем burger */
+    .burger {
+        display: block;
+    }
+
+    /* Скрываем обычное меню */
+    .List {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(26, 26, 46, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        
+        /* Скрыто по умолчанию */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Когда меню открыто */
+    .List.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .List li {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .List a {
+        padding: 12px 40px;
+        font-size: 18px;
+    }
+
+    /* Блокируем скролл body при открытом меню */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* =========================================
+   МАЛЕНЬКИЕ МОБИЛЬНЫЕ (до 480px)
+   ========================================= */
+@media screen and (max-width: 480px) {
+    .Header {
+        padding: 12px 15px;
+    }
+
+    .Logoone {
+        font-size: 18px;
+    }
+
+    .burger {
+        width: 28px;
+        height: 20px;
+    }
+
+    .burger span:nth-child(2) {
+        top: 8px;
+    }
+
+    .burger span:nth-child(3) {
+        top: 16px;
+    }
+
+    .burger.open span:nth-child(1) {
+        top: 8px;
+    }
+
+    .burger.open span:nth-child(3) {
+        top: 8px;
+    }
+
+    .List li {
+        font-size: 18px;
+    }
+
+    .List a {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
 }

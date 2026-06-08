@@ -1,0 +1,24 @@
+::view-transition-group(root){
+    animation-duration: 1S;
+}
+
+::view-transition-old(root){
+    animation-name: slide_out;
+}
+
+::view-transition-new(root){
+    animation-name: slide_in;
+}
+
+
+@keyframes slide_out {
+    to{
+        translate: -100vw;
+    }
+}
+
+@keyframes slide_in {
+    to{
+        translate: 100vw;
+    }
+}

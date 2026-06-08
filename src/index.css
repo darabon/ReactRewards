@@ -1,9 +1,35 @@
 body {
-    background-color: #f8fafb;
-    margin: 0;
-    padding: 0;
+  background-color: #F8FAFB;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+
+::view-transition-group(root) {
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+    animation-name: slide_out;
+}
+
+::view-transition-new(root) {
+    animation-name: slide_in;
+}
+
+@keyframes slide_out {
+    to {
+        translate: -100vw;
+    }
+}
+
+@keyframes slide_in {
+    from {
+        translate: 100vw;
+    }
 }

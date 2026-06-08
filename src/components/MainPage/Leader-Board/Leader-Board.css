@@ -17,6 +17,7 @@
     font-size: 42px;
     line-height: 1;
     margin-bottom: 60px;
+    text-align: center;
 }
 
 .Colums {
@@ -24,6 +25,8 @@
     padding: 0 10.8vw;
     grid-template-columns: 1fr 1fr;
     gap: 38px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .Left-Colum,
@@ -40,10 +43,11 @@
     padding: 32px 29px;
     display: grid;
     height: max-content;
-    /* Скрытие скроллбара для firefix */
+    /* Скрытие скроллбара для Firefox */
     scrollbar-width: none;
 }
-/* для chromium */
+
+/* Скрытие скроллбара для chromium */
 .Left-Colum::-webkit-scrollbar,
 .Right-Colum::-webkit-scrollbar {
     width: 0 !important;
@@ -90,11 +94,6 @@
     padding-top: 20px;
 }
 
-.Achivments {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .Person {
     box-sizing: border-box;
     display: grid;
@@ -115,6 +114,7 @@
     line-height: 24px;
     margin: 0;
     font-weight: 600;
+    text-align: center;
 }
 
 .Location {
@@ -122,6 +122,7 @@
     line-height: 20px;
     margin-top: 4px;
     color: #d0d5ee;
+    text-align: center;
 }
 
 .Rank_img {
@@ -182,7 +183,6 @@
     line-height: 28px;
     margin: 0;
     color: rgb(255 255 255);
-    margin: 0;
 }
 
 .Person-Rairing p {
@@ -270,6 +270,8 @@
     letter-spacing: -1.5px;
     font-weight: 600;
     margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .Global-Rank {
@@ -333,19 +335,19 @@
 
 .Leader-Board-Item {
     display: flex;
-    height: 88px;
+    min-height: 88px;
+    height: auto;
     width: 100%;
     background-color: rgb(0 0 0 / 0.1);
     border-radius: 12px;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    padding-right: 36px;
-    padding-left: 25px;
+    padding: 12px 36px 12px 25px;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .Person-Leader {
     display: flex;
+    align-items: center;
 }
 
 .Rank-Img {
@@ -373,9 +375,7 @@
     margin-right: auto;
     background-color: rgb(255 255 255 / 0.08);
     height: 64px;
-    padding: 8px;
-    padding-left: 20px;
-    padding-right: 14px;
+    padding: 8px 14px 8px 20px;
     align-items: center;
     gap: 15px;
     justify-content: center;
@@ -416,4 +416,152 @@
 
 .Leader-Rewards p {
     margin-bottom: 0;
+}
+
+/* ==========================================================================
+   МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВА (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Планшеты и небольшие ноутбуки (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .Colums {
+        grid-template-columns: 1fr; /* Колонки перестраиваются вертикально */
+        padding: 0 4vw;
+        gap: 24px;
+    }
+
+    .Left-Colum,
+    .Right-Colum {
+        max-width: 100%;
+        max-height: none; /* Убираем ограничение высоты для мобильной прокрутки всей страницы */
+    }
+
+    .Leader-Board-Content {
+        margin-left: 4vw;
+        margin-right: 4vw;
+    }
+}
+
+/* Мобильные устройства средней ширины (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .Leader-Board {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .Leader-Board h1 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .Performers {
+        font-size: 28px;
+        line-height: 36px;
+        margin: 40px auto 20px;
+    }
+
+    /* Адаптируем карточку отзыва: стэкаем аватар и отзыв */
+    .Weekly-Left {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .Person-Title {
+        margin-left: 0;
+        gap: 12px;
+    }
+
+    .Person-Rairing,
+    .Person-Colledg {
+        width: 100%; /* Растягиваем на всю ширину */
+    }
+
+    /* Список лидеров: перестроение в вертикальный вид */
+    .Leader-Board-Item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .Rank-Img {
+        margin-right: 0;
+        margin-bottom: 8px;
+        align-self: center;
+    }
+
+    .Person-Leader {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .Person-Leader div p {
+        margin-left: 0;
+    }
+
+    .Leader-Achievements {
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .Leader-Rewards {
+        justify-content: center;
+    }
+
+    .Switch-btn {
+        padding: 6px 30px; /* Уменьшаем внутренние отступы кнопок выбора табов */
+    }
+}
+
+/* Маленькие экраны телефонов (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .Leader-Board h1 {
+        font-size: 26px;
+    }
+
+    .Left-Colum,
+    .Right-Colum {
+        padding: 20px 15px;
+    }
+
+    .Left-Colum h2,
+    .Right-Colum h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    /* Карточки рефералов выстраиваем в одну колонку */
+    .Referal-Container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .Weekly-Right {
+        padding: 15px 10px;
+    }
+
+    /* Достижения на мобильном */
+    .Achivments {
+        max-width: 100%;
+    }
+
+    .Leader-Achievements {
+        flex-direction: column;
+        height: auto;
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .Switch-btn {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    .Global-Rank {
+        margin-bottom: 30px;
+    }
 }

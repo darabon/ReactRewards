@@ -1,43 +1,135 @@
-.Footer {
-    height: 360px;
+/* =========================================
+   Базовые стили (Десктоп)
+   ========================================= */
+   .Footer {
     width: 100%;
-    background-color: #0c0439;
+    background-color: #0C0439;
     display: flex;
     flex-direction: column;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    padding: 60px 0 30px 0;
+    box-sizing: border-box;
 }
 
 .Footer_content {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
-    margin-left: 200px;
-    margin-right: 200px;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.Footer_left {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
 }
 
 .Logo {
-    font-family: 'Saira', sans-serif;
+    font-family: "Saira", sans-serif;
     font-size: 40px;
     font-weight: 700;
-    margin: 0;
-    color: #d6c2ff;
+    margin: 0 0 10px 0;
+    color: #D6C2FF;
     letter-spacing: 0.5px;
+}
+
+.Footer_subtitle {
+    font-size: 18px;
+    color: #D3CCF6;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.Search_foot {
+    border: 2px solid #7E76A8;
+    border-radius: 8px;
+    padding: 8px;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+.Search_foot:focus-within {
+    border-color: #003FE0;
+}
+
+.input_foot {
+    background: transparent;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    border: none;
+    color: #D3CCF6;
+    flex-grow: 1;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.input_foot::placeholder {
+    color: #7E76A8;
+}
+
+.search_foot_icon {
+    background-color: #003FE0;
+    width: 24px;
+    height: 24px;
+    border-radius: 30px;
+    padding: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search_foot_icon:hover {
+    background-color: #0033b3;
+    transform: scale(1.05);
 }
 
 .Footer_links {
     display: flex;
-    color: #d3ccf6;
+    color: #D3CCF6;
     gap: 80px;
+}
+
+.link_column h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+}
+
+.link_column p {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.link_column p:hover {
+    color: #FFFFFF;
+    transform: translateX(4px);
 }
 
 .Footer_bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 24px;
-    color: #d3ccf6;
-    margin-left: 200px;
-    margin-right: 200px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 40px 0 40px;
+    border-top: 1px solid rgba(211, 204, 246, 0.2);
+    margin-top: 60px;
+    color: #D3CCF6;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
 .Footer_legal {
@@ -46,33 +138,289 @@
     gap: 8px;
 }
 
-.Footer_subtitle {
-    font-size: 18px;
-    color: #d3ccf6;
-    font-weight: 500px;
+.Footer_legal p {
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.Search_foot {
-    border: 2px solid #7e76a8;
-    border-radius: 8px;
-    padding: 12px 40px;
-    width: 320px;
-    margin-top: 8px;
-    display: flex;
+.Footer_legal p:hover {
+    color: #FFFFFF;
 }
 
-.input_foot {
-    background: transparent;
-    font-size: 18px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    border: none;
+/* =========================================
+   Планшеты (до 1024px)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    .Footer {
+        padding: 50px 0 25px 0;
+    }
+
+    .Footer_content {
+        padding: 0 30px;
+        gap: 50px;
+    }
+
+    .Footer_left {
+        min-width: 280px;
+    }
+
+    .Logo {
+        font-size: 36px;
+    }
+
+    .Footer_subtitle {
+        font-size: 16px;
+    }
+
+    .Search_foot {
+        width: 280px;
+    }
+
+    .Footer_links {
+        gap: 50px;
+    }
+
+    .link_column h2 {
+        font-size: 17px;
+    }
+
+    .link_column p {
+        font-size: 15px;
+    }
+
+    .Footer_bottom {
+        padding: 20px 30px 0 30px;
+        margin-top: 50px;
+    }
 }
 
-.search_foot_icon {
-    background-color: #003fe0;
-    width: 24px;
-    height: 24px;
-    border-radius: 30px;
-    padding: 10px 10px;
+/* =========================================
+   Небольшие планшеты (до 900px)
+   ========================================= */
+@media screen and (max-width: 900px) {
+    .Footer_content {
+        gap: 40px;
+    }
+
+    .Footer_links {
+        gap: 35px;
+    }
+
+    .link_column h2 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .link_column p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+/* =========================================
+   Мобильные устройства (до 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .Footer {
+        padding: 40px 0 20px 0;
+    }
+
+    .Footer_content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .Footer_left {
+        min-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Logo {
+        font-size: 32px;
+    }
+
+    .Footer_subtitle {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .Search_foot {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .input_foot {
+        font-size: 15px;
+        padding: 6px 10px;
+    }
+
+    .search_foot_icon {
+        width: 20px;
+        height: 20px;
+        padding: 8px;
+    }
+
+    .Footer_links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px 40px;
+        width: 100%;
+    }
+
+    .link_column {
+        text-align: center;
+        min-width: 140px;
+    }
+
+    .link_column h2 {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+
+    .link_column p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .Footer_bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 20px 20px 0 20px;
+        margin-top: 40px;
+        font-size: 13px;
+    }
+
+    .Footer_legal {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+}
+
+/* =========================================
+   Маленькие мобильные устройства (до 580px)
+   ========================================= */
+@media screen and (max-width: 580px) {
+    .Footer {
+        padding: 35px 0 20px 0;
+    }
+
+    .Footer_content {
+        padding: 0 15px;
+        gap: 30px;
+    }
+
+    .Logo {
+        font-size: 28px;
+    }
+
+    .Footer_subtitle {
+        font-size: 15px;
+    }
+
+    .Search_foot {
+        max-width: 280px;
+    }
+
+    .input_foot {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+
+    .Footer_links {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .link_column {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .link_column h2 {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .link_column p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 4px 0;
+    }
+
+    .Footer_bottom {
+        padding: 18px 15px 0 15px;
+        margin-top: 30px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   Очень маленькие мобильные устройства (до 400px)
+   ========================================= */
+@media screen and (max-width: 400px) {
+    .Footer {
+        padding: 30px 0 15px 0;
+    }
+
+    .Footer_content {
+        padding: 0 12px;
+        gap: 25px;
+    }
+
+    .Logo {
+        font-size: 24px;
+    }
+
+    .Footer_subtitle {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .Search_foot {
+        max-width: 260px;
+        padding: 6px;
+    }
+
+    .input_foot {
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+
+    .search_foot_icon {
+        width: 18px;
+        height: 18px;
+        padding: 7px;
+    }
+
+    .link_column h2 {
+        font-size: 16px;
+    }
+
+    .link_column p {
+        font-size: 14px;
+    }
+
+    .Footer_bottom {
+        padding: 15px 12px 0 12px;
+        margin-top: 25px;
+        font-size: 11px;
+        gap: 12px;
+    }
+
+    .Footer_legal {
+        gap: 6px;
+    }
+
+    .Footer_legal span {
+        display: none;
+    }
 }
